@@ -1,0 +1,40 @@
+# Register for Tech Innovators Summit 2024
+
+<!-- Header Section -->
+---
+
+## Navigation
+- [Home](home.md)
+- [About](about.md)
+- [Events](events.md)
+- [Register](register.md)
+- [Contact](contact.md)
+
+<!-- Main Content Section -->
+---
+
+## Register for the Event
+
+To participate in the Tech Innovators Summit 2024, please fill out the registration form below.
+
+```html
+<form action="submit_registration.php" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="sessions">Select Sessions:</label>
+    <select id="sessions" name="sessions[]" multiple>
+        <option value="ai_future">Keynote: The Future of AI</option>
+        <option value="ai_ethics">Workshop: AI Ethics</option>
+        <option value="blockchain_revolution">Keynote: Blockchain Revolution</option>
+        <option value="blockchain_development">Workshop: Blockchain Development</option>
+    </select>
+
+    <button type="submit">Register</button>
+</form>
