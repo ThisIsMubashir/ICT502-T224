@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Calculator</title>
+</head>
+<body>
+    <label for="price-select">Choose a price:</label>
+    <select name="prices" id="price-select">
+    </select>
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" required>
+    <input type="submit" value="Calculate" onclick="calculateTotal()" required>
+    <p id="result"></p>
+    <script>
+        const priceList = [10, 20, 30, 40, 50]
+
+        const priceSelect = document.querySelector("#price-select");
+
+        // Use a for loop to add options to the price select element.
+        for (let index = 0; index < priceList.length; index++) {
+            const price = priceList[index];
+
+            const optionElement = document.createElement("option");
+            optionElement.value = price;
+            optionElement.textContent = "$" + price;
+
+            priceSelect.appendChild(optionElement);
+        }
+        
+        // Complete this function to calculate the total price.
+        function calculateTotal() {
+            const priceSelect = document.querySelector("#price-select");
+            const quantityInput = document.querySelector("#quantity");
+            const resultPara = document.querySelector("#result");
+
+            const total = priceSelect.value * quantityInput.value;
+
+            resultPara.textContent = "Total: $" + total;
+        }
+    </script>
+</body>
+</html>

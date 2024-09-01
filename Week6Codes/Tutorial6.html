@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Calculator</title>
+</head>
+<body>
+    <label for="price-select">Choose a price:</label>
+    <select name="prices" id="price-select">
+    </select>
+
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" required>
+
+    <input type="submit" value="Calculate" onclick="calculateTotal()" required>
+    <p id="result"></p>
+
+    <script>
+        const priceList = [10, 20, 30, 40, 50,70,90, 140]
+
+        const priceSelect = document.querySelector("#price-select");
+        // priceSelect = "<select name="prices" id="price-select"></select>""
+
+        // Use a for loop to add options to the price select element.
+        for (let index = 0; index < priceList.length; index++) {
+
+           const opt = document.createElement("option");
+           //opt = <option></option>
+
+           opt.value = priceList[index];
+           //opt = "<option value=" + priceList[index]></option>"
+
+           opt.textContent = "Price $" + priceList[index];
+           //opt = "<option value=" + priceList[index]>Price $ priceList[index]</option>"
+
+           priceSelect.appendChild(opt);
+        //    <select name="prices" id="price-select">
+        //     <option value=" + priceList[index]>Price $ priceList[index]</option>
+        //     </select>"
+        }
+        
+        // Complete this function to calculate the total price.
+        function calculateTotal() {
+            const qyt = document.querySelector("#quantity");
+            const price = document.querySelector("#price-select");
+            const result = document.querySelector("#result");
+
+            const total = qyt.value * price.value;
+            result.textContent = "The total price is " + total;
+        }
+    </script>
+</body>
+</html>
